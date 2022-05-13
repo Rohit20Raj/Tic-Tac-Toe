@@ -1,4 +1,4 @@
-// console.log("Hello")
+console.log("Hello")
 
 let turn = "X";
 let gameOver = false;
@@ -28,10 +28,12 @@ const checkWin = () => {
     wins.forEach(e => {
         if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
             document.querySelector('.turn').innerText = boxtext[e[0]].innerText + " Won"
-            gameOver = true
+            gameOver = true;
+            document.getElementsByClassName("dance")[0].style.height = "20vh";
         }
     })
 }
+
 //game logic
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element => {
@@ -40,10 +42,22 @@ Array.from(boxes).forEach(element => {
         if (boxtext.innerText === '') {
             boxtext.innerText = turn;
             turn = changeTurn();
+            checkWin();
         }
-        checkWin();
-        if (gameOver = false) {
+        if (gameOver == false) {
             document.getElementsByClassName("turn")[0].innerText = "Turn for " + turn;
         }
     })
+})
+
+//Reset
+document.getElementsByClassName('btn')[0].addEventListener('click', ()=>{
+    let boxtext = document.querySelectorAll('.text');
+    Array.from(boxtext).forEach(element => {
+        element.innerText = "";
+    });
+    document.getElementsByClassName("dance")[0].style.height = "0vh";
+    gameOver = false;
+    turn = "X";
+    document.getElementsByClassName("turn")[0].innerText = "Turn for " + turn;
 })

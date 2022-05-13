@@ -20,16 +20,17 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+    gap: 5vh;
 }
 .game{
     display: grid;
     grid-template-columns: 14vh 14vh 14vh;
     grid-template-rows: 14vh 14vh 14vh;
-    width: 75vh;
+    /* width: 75vh; */
     align-items: center;
+    margin: auto;
 }
 .box{
-    /* border: 3px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +41,24 @@ h1{
 .box:hover{
     background-color: rgb(241, 229, 252);
 }
-
+.info{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* margin: 5vh 10vh; */
+    /* width: 15vh; */
+}
+.dance{
+    height: 0vh;
+}
+@media only screen and (min-width: 600px) {
+    .containers{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10vh;
+    }
+  }
 /* utility classes */
 
 .bt{
