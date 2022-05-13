@@ -1,5 +1,7 @@
 console.log("Hello")
 
+let turnMusic = new Audio('files/ting.mp3');
+let winMusic = new Audio('files/music.mp3');
 let turn = "X";
 let gameOver = false;
 
@@ -27,7 +29,8 @@ const checkWin = () => {
     ]
     wins.forEach(e => {
         if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
-            document.querySelector('.turn').innerText = boxtext[e[0]].innerText + " Won"
+            document.querySelector('.turn').innerText = boxtext[e[0]].innerText + " Won";
+            winMusic.play();
             gameOver = true;
             document.getElementsByClassName("dance")[0].style.height = "20vh";
         }
@@ -41,6 +44,7 @@ Array.from(boxes).forEach(element => {
     element.addEventListener('click', () => {
         if (boxtext.innerText === '') {
             boxtext.innerText = turn;
+            turnMusic.play();
             turn = changeTurn();
             checkWin();
         }
@@ -56,6 +60,7 @@ document.getElementsByClassName('btn')[0].addEventListener('click', ()=>{
     Array.from(boxtext).forEach(element => {
         element.innerText = "";
     });
+    winMusic.pause();
     document.getElementsByClassName("dance")[0].style.height = "0vh";
     gameOver = false;
     turn = "X";
