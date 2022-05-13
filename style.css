@@ -49,6 +49,10 @@ h1{
     /* margin: 5vh 10vh; */
     /* width: 15vh; */
 }
+.btn{
+    height: 7vh;
+    margin-top: 2vh;
+}
 .dance{
     height: 0vh;
 }
