@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Macondo&family=Roboto:ital@1&family=Sacramento&family=Sansita+Swashed:wght@500&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster';
+}
+nav{
+    background-color: black;
+    color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+h1{
+    text-align: center;
+}
+.containers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.game{
+    display: grid;
+    grid-template-columns: 14vh 14vh 14vh;
+    grid-template-rows: 14vh 14vh 14vh;
+    width: 75vh;
+    align-items: center;
+}
+.box{
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Macondo';
+    font-size: 10vh;
+    height: 100%;
+}
+.box:hover{
+    background-color: rgb(241, 229, 252);
+}
+
+/* utility classes */
+
+.bt{
+    border-top: 3px solid black;
+}
+.bb{
+    border-bottom: 3px solid black;
+}
+.br{
+    border-right: 3px solid black;
+}
+.bl{
+    border-left: 3px solid black;
+}
